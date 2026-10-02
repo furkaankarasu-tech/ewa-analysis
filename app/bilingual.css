@@ -1,0 +1,19 @@
+/* İki dilli kartların yalnızca ilave tipografisi; v20 ana tasarımına dokunulmaz. */
+.finding-heading > div { flex:1; min-width:0; }
+.translation-original-title,.translation-original-line,.translation-original-action { overflow-wrap:break-word; word-break:normal; }
+.finding-heading .translation-original-title { margin:3px 0 0; font-size:11px; line-height:1.4; font-weight:400; color:#80929c; }
+.finding-body > .translation-original-line { margin:-6px 0 9px; color:#8296a0; font-size:11px; line-height:1.45; }
+.finding-action > div { min-width:0; flex:1; }
+.finding-action > div p { margin:0; }
+.finding-action .translation-original-action { display:block; color:#658490; font-size:11px; line-height:1.45; font-weight:400; border-top:1px solid #dce9ed; padding-top:6px; margin:6px 0 0; }
+.finding-action .translation-original-action span { display:inline-block; margin-right:7px; color:#62818d; font-weight:750; }
+.translation-unavailable { display:block; color:#7b8389; font-size:11px; font-weight:400; line-height:1.4; margin-top:5px; }
+.recommendation-item .recommendation-turkish { margin-top:9px; color:#274959; font-size:14px; }
+.recommendation-item .recommendation-english { border-top:1px solid #edf1f3; padding-top:7px; margin-top:8px; color:#8296a0; font-size:11.5px; line-height:1.45; }
+.recommendation-english span { display:block; margin:0 0 4px; font-size:10px; font-weight:750; color:#567e8c; }
+.recommendation-item .translation-unavailable { margin-top:6px; }
+
+/* v27: optional evidence and cause have the same compact bilingual spacing. */
+.finding-context > p { margin:0; }
+.finding-context > .translation-original-line { margin:3px 0 2px; color:#8296a0; font-size:11px; line-height:1.4; }
+.recommendation-source-note { color:#7b8e98; font-size:11px; margin:0 0 5px; }
