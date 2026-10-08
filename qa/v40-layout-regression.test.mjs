@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const css = fs.readFileSync(new URL('../app/modern-theme.css', import.meta.url), 'utf8');
+const page = fs.readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
+assert.match(css, /\.modern-shell\.app-shell\s*\{[\s\S]*?display:block;/, 'modern shell must override legacy flex root');
+assert.match(css, /\.modern-shell \.site-header\s*\{[\s\S]*?width:calc\(100% - 232px\)/, 'desktop header width must account for sidebar');
+assert.match(css, /\.modern-shell \.workspace\s*\{[\s\S]*?width:calc\(100% - 232px\)/, 'desktop workspace width must account for sidebar');
+assert.match(css, /\.modern-shell \.welcome-features\s*\{[\s\S]*?grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/, 'welcome features need real grid styling');
+assert.ok(page.includes('className="welcome-features"'), 'landing feature cards must remain in page');
+console.log('v40 layout regression checks passed');

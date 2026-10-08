@@ -1,0 +1,26 @@
+// Run with the user's CEP PDF; confidential report is never redistributed.
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import JSZip from 'jszip';
+import {analyzeEwa,toMarkdown} from '../lib/ewa.ts';
+import {knownSapTranslation,emptyTranslations} from '../lib/local-translation.ts';
+import {createActionWorkbook} from '../lib/excel-export.ts';
+const path=process.argv[2]; if(!path) throw Error('Provide CEP PDF path');
+const r=await analyzeEwa(new File([readFileSync(path)],'CEP.pdf'));
+assert.equal(r.sid,'CEP'); assert.equal(r.period,'18.07.2022 – 24.07.2022');
+assert.equal(r.kpis.find(x=>x.label==='ABAP dump').value,'25');
+assert.equal(r.alerts.items.length,10); assert.equal(r.findings.length,8);
+assert.equal(r.sqlServerStatements.length,10);
+assert.ok(r.recommendations[5].text.endsWith('further information.'));
+assert.ok(r.recommendations[8].text.endsWith('should not contain trivial entries.'));
+const tr=emptyTranslations();
+r.recommendations.forEach((x,i)=>{const t=knownSapTranslation(x.text);assert.ok(t,`Recommendation ${i+1} should be reviewed`);tr.recommendations[i]=t;});
+const zip=await JSZip.loadAsync(await(await createActionWorkbook(r,tr)).arrayBuffer());
+const action=await zip.file('xl/worksheets/sheet1.xml').async('string');
+assert.equal((action.match(/<row /g)||[]).length,13);
+const rec=await zip.file('xl/worksheets/sheet2.xml').async('string');
+assert.ok(rec.includes('gw/acl_mode')); assert.ok(rec.includes(tr.recommendations[6]));
+const sql=await zip.file('xl/worksheets/sheet3.xml').async('string');
+assert.ok(sql.includes('ARFCSSTATE'));
+assert.ok(toMarkdown(r,tr).includes(tr.recommendations[6]));
+console.log('PASS: CEP PDF → SID/period/dump/10 alerts/8 findings/10 SQL → 10 of 10 reviewed recommendations → populated XLSX and selected-language Markdown.');
