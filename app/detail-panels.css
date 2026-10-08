@@ -1,0 +1,87 @@
+/* v38: real EWA source panels. Scoped to the existing light workspace so the
+   selected main theme, header, finding cards and charts remain untouched. */
+.architect-shell .deep-analysis{display:grid;gap:22px;min-width:0}
+.architect-shell .deep-analysis .deep-section{min-width:0;padding:23px 24px;border:1px solid #d9e5e7;border-radius:17px;background:#fff;box-shadow:0 8px 25px #163b4b0d}
+.architect-shell .deep-analysis .section-heading{align-items:center;gap:12px;padding-bottom:16px;margin-bottom:17px;border-bottom:1px solid #e5edf0}
+.architect-shell .deep-analysis .section-heading .eyebrow{font:800 11px/1.5 ui-sans-serif,system-ui,sans-serif!important;letter-spacing:.095em!important;color:#346e7f!important;text-transform:uppercase;margin:0 0 6px;white-space:normal;overflow-wrap:break-word}
+.architect-shell .deep-analysis .section-heading h2{font:normal clamp(21px,2vw,26px)/1.25 Georgia,serif;color:#183e50;letter-spacing:-.025em}
+.architect-shell .deep-analysis .section-heading>span{font:600 12px ui-sans-serif,system-ui,sans-serif;color:#547483;white-space:nowrap;padding:6px 10px;background:#f1f6f7;border-radius:8px}
+.architect-shell .heading-original{display:inline-block;font:500 11px ui-sans-serif,system-ui,sans-serif;letter-spacing:0;color:#83949d;margin-left:10px;vertical-align:middle}
+/* One natural-language alarm per line; no forced two-column clipping. */
+.architect-shell .deep-analysis .alert-list{display:grid;grid-template-columns:minmax(0,1fr);gap:9px}
+.architect-shell .deep-analysis .alert-item{display:grid;grid-template-columns:8px minmax(0,1fr) auto;align-items:start;column-gap:13px;padding:14px 16px;border:1px solid #e0e9ed;border-left:3px solid #99acb5;border-radius:11px;background:#fbfdfd;font-size:14px;line-height:1.55;color:#263f4d}
+.architect-shell .deep-analysis .alert-item.severity-red{border-left-color:#cb514e}
+.architect-shell .deep-analysis .alert-item.severity-yellow{border-left-color:#d6a14c}
+.architect-shell .deep-analysis .alert-item .alert-dot{margin:8px 0 0}
+.architect-shell .deep-analysis .alert-copy{min-width:0}
+.architect-shell .deep-analysis .alert-copy>p{margin:0;line-height:1.55;font-size:14px;color:#284958;overflow-wrap:anywhere}
+.architect-shell .deep-analysis .alert-copy>small{display:block;margin-top:5px;font-size:11px;color:#8a6b42}
+.architect-shell .deep-analysis .alert-item>strong{font:700 11px/1.3 ui-sans-serif,system-ui,sans-serif!important;border-radius:6px;padding:5px 8px;margin-top:0;color:#aa4647;background:#fff1f0}
+.architect-shell .deep-analysis .alert-item.severity-yellow>strong{color:#98672b;background:#fff5e8}
+.architect-shell .deep-analysis .alert-source{margin-top:6px;min-width:0}
+.architect-shell .deep-analysis .alert-source summary{display:list-item;width:max-content;max-width:100%;font-size:11px;font-weight:600;color:#467689;cursor:pointer}
+.architect-shell .deep-analysis .alert-source p{padding:9px 11px;margin-top:7px;background:#f0f5f7;border-left:2px solid #aac5ce;border-radius:5px;color:#587384;font:12px/1.6 ui-sans-serif,system-ui,sans-serif;overflow-wrap:anywhere}
+/* SQL: one full-width, scan-friendly table per metric. Long source text is
+   hidden inside a native disclosure instead of expanding a 300px card. */
+.architect-shell .deep-analysis .sql-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.architect-shell .deep-analysis .sql-panel{padding:0;border:1px solid #dce7e9;border-radius:12px;box-shadow:none;overflow:hidden;background:#fff}
+.architect-shell .deep-analysis .sql-panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 17px;background:linear-gradient(90deg,#f0f7f8,#fbfdfd);border-bottom:1px solid #e1eaec}
+.architect-shell .deep-analysis .sql-panel-title h3{font:700 16px/1.35 ui-sans-serif,system-ui,sans-serif;color:#1d4557;margin:0}
+.architect-shell .deep-analysis .sql-panel-title span{font-size:12px;color:#6b8491}
+.architect-shell .sql-table-scroll{max-width:100%;overflow-x:auto;scrollbar-color:#b9cbd0 #f1f5f5}
+.architect-shell .sql-overview-table{width:100%;min-width:620px;border-collapse:collapse;text-align:left;font:13px/1.45 ui-sans-serif,system-ui,sans-serif;color:#315161;table-layout:fixed}
+.architect-shell .sql-overview-table th,.architect-shell .sql-overview-table td{border-bottom:1px solid #e8eef0;padding:13px 12px;vertical-align:top}
+.architect-shell .sql-overview-table tr:last-child>th,.architect-shell .sql-overview-table tr:last-child>td{border-bottom:0}
+.architect-shell .sql-overview-table thead{background:#f8fafb;color:#607986}
+.architect-shell .sql-overview-table thead th{font-size:11px;font-weight:800;letter-spacing:.01em;padding:11px 12px}
+.architect-shell .sql-overview-table th:nth-child(1),.architect-shell .sql-overview-table td:nth-child(1){width:52px}
+.architect-shell .sql-overview-table th:nth-child(2){width:41%}
+.architect-shell .sql-overview-table td:nth-child(3),.architect-shell .sql-overview-table td:nth-child(4),.architect-shell .sql-overview-table td:nth-child(5){width:17%;font-variant-numeric:tabular-nums}
+.architect-shell .sql-overview-table tbody tr:hover{background:#f7fbfb}
+.architect-shell .sql-statement-detail{min-width:0;font-size:12px;font-weight:400}
+.architect-shell .sql-statement-detail summary{display:flex;flex-wrap:wrap;align-items:center;gap:3px 8px;cursor:pointer;max-width:100%;list-style:none;overflow-wrap:anywhere}
+.architect-shell .sql-statement-detail summary::-webkit-details-marker{display:none}
+.architect-shell .sql-statement-detail summary::before{content:'▸';color:#38828a;font-size:13px}
+.architect-shell .sql-statement-detail[open] summary::before{content:'▾'}
+.architect-shell .sql-hash-label{font:700 12px ui-monospace,SFMono-Regular,Consolas,monospace;color:#245268}
+.architect-shell .sql-source-label{display:block;flex-basis:100%;padding-left:15px;font-size:11px;color:#577787;word-break:break-word}
+.architect-shell .sql-expand-label{padding-left:15px;flex-basis:100%;font-size:10px;font-weight:600;color:#3b8a92}
+.architect-shell .sql-primary-number strong{display:block;color:#173c50;font-size:16px;white-space:nowrap}
+.architect-shell .sql-primary-number small{display:block;color:#78909a;font-size:10px;white-space:normal}
+.architect-shell .sql-disclosure{display:grid;gap:9px;max-width:min(100%,780px);margin-top:12px;padding:13px;background:#f2f7f8;border:1px solid #e0ebed;border-radius:8px}
+.architect-shell .sql-disclosure>div{min-width:0}
+.architect-shell .sql-disclosure strong{display:block;color:#446d7a;font-size:11px;margin-bottom:5px}
+.architect-shell .sql-disclosure code,.architect-shell .sql-disclosure pre,.architect-shell .sql-disclosure p{display:block;max-width:100%;overflow-wrap:anywhere;white-space:pre-wrap;word-break:break-word;margin:0;color:#254c60;font:11px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;max-height:200px;overflow:auto}
+.architect-shell .deep-analysis .data-note{font-size:12px;line-height:1.6;color:#6a818d}
+@media(max-width:760px){.architect-shell .deep-analysis .deep-section{padding:17px 13px}.architect-shell .deep-analysis .section-heading{align-items:flex-start}.architect-shell .deep-analysis .section-heading h2{font-size:21px}.architect-shell .deep-analysis .alert-item{grid-template-columns:7px minmax(0,1fr);padding:12px}.architect-shell .deep-analysis .alert-item>strong{grid-column:2;justify-self:start;margin-top:4px}.architect-shell .heading-original{display:block;margin:5px 0 0}.architect-shell .sql-table-scroll{margin:0 -1px}}
+/* Full-width SAP recommendations stay scannable even with long instructions. */
+.architect-shell .deep-analysis .recommendation-list{display:grid;grid-template-columns:minmax(0,1fr);gap:11px}
+.architect-shell .deep-analysis .recommendation-item{padding:16px 18px;border-radius:10px;min-width:0}
+.architect-shell .deep-analysis .recommendation-head span{overflow-wrap:anywhere}
+.architect-shell .deep-analysis .recommendation-original p{overflow-wrap:anywhere;line-height:1.6}
+/* On a phone, SQL measurements become stacked records rather than a clipped
+   five-column table. Values and source disclosures remain accessible. */
+@media(max-width:760px){
+ .architect-shell .sql-table-scroll{overflow:visible}
+ .architect-shell .sql-overview-table,.architect-shell .sql-overview-table tbody{display:block;width:100%;min-width:0;table-layout:auto}
+ .architect-shell .sql-overview-table thead{display:none}
+ .architect-shell .sql-overview-table tbody tr{display:block;width:100%;padding:12px 14px;border-bottom:1px solid #e4edef}
+ .architect-shell .sql-overview-table tbody tr:last-child{border-bottom:0}
+ .architect-shell .sql-overview-table tbody tr>th,.architect-shell .sql-overview-table tbody tr>td{display:flex;justify-content:space-between;align-items:baseline;gap:9px;width:100%!important;min-width:0;max-width:100%;padding:3px 0;border:0;font-size:12px}
+ .architect-shell .sql-overview-table tbody tr>td::before{content:attr(data-label);font-size:11px;font-weight:700;color:#718995}
+ .architect-shell .sql-overview-table tbody tr>th{display:block;padding:7px 0 11px;border-bottom:1px dashed #dbe5e8}
+ .architect-shell .sql-statement-detail{width:100%}
+ .architect-shell .sql-primary-number strong,.architect-shell .sql-primary-number small{display:inline;font-size:13px}
+ .architect-shell .sql-primary-number small{margin-left:4px;font-size:11px}
+}
+
+/* Full-width comparison, with wrapped values and stacked rows on small screens. */
+.parameter-table-wrap { border:1px solid #dce5e9; border-radius:12px; overflow:hidden; }
+.parameter-table caption { text-align:left; padding:12px 16px; color:#617d89; font-size:12px; background:#f8fafc; }
+.parameter-table code { font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace; white-space:normal; overflow-wrap:anywhere; }
+.parameter-table thead th { white-space:normal; }
+.parameter-table tbody tr:nth-child(even) { background:#f7fafc; }
+.parameter-table tbody td:nth-child(4) { background:#edf6fb; color:#164d6b; font-weight:650; }
+.parameter-table td:last-child { color:#617d89; font-weight:400; font-size:12px; }
+.parameter-missing { color:#778690; font-size:12px; }
+@media (max-width:960px) { .parameter-table colgroup { display:none; } }

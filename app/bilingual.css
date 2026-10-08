@@ -1,0 +1,52 @@
+/* İki dilli kartların yalnızca ilave tipografisi; v20 ana tasarımına dokunulmaz. */
+.finding-heading > div { flex:1; min-width:0; }
+.translation-original-title,.translation-original-line,.translation-original-action { overflow-wrap:break-word; word-break:normal; }
+.finding-heading .translation-original-title { margin:3px 0 0; font-size:11px; line-height:1.4; font-weight:400; color:#80929c; }
+.finding-body > .translation-original-line { margin:-6px 0 9px; color:#8296a0; font-size:11px; line-height:1.45; }
+.finding-action > div { min-width:0; flex:1; }
+.finding-action > div p { margin:0; }
+.finding-action .translation-original-action { display:block; color:#658490; font-size:11px; line-height:1.45; font-weight:400; border-top:1px solid #dce9ed; padding-top:6px; margin:6px 0 0; }
+.finding-action .translation-original-action span { display:inline-block; margin-right:7px; color:#62818d; font-weight:750; }
+.translation-unavailable { display:block; color:#7b8389; font-size:11px; font-weight:400; line-height:1.4; margin-top:5px; }
+.recommendation-item .recommendation-turkish { margin-top:9px; color:#274959; font-size:14px; }
+.recommendation-item .recommendation-english { border-top:1px solid #edf1f3; padding-top:7px; margin-top:8px; color:#8296a0; font-size:11.5px; line-height:1.45; }
+.recommendation-english span { display:block; margin:0 0 4px; font-size:10px; font-weight:750; color:#567e8c; }
+.recommendation-item .translation-unavailable { margin-top:6px; }
+
+/* v27: optional evidence and cause have the same compact bilingual spacing. */
+.finding-context > p { margin:0; }
+.finding-context > .translation-original-line { margin:3px 0 2px; color:#8296a0; font-size:11px; line-height:1.4; }
+.recommendation-source-note { color:#7b8e98; font-size:11px; margin:0 0 5px; }
+
+/* v28: SAP önerilerinde uzun kaynak metinler kartı genişletmez.
+   V20'nin ana görünüm kurallarına dokunulmaz. */
+.recommendation-item { align-self:start; }
+.recommendation-item .recommendation-head > span { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; word-break:normal; }
+.recommendation-item .recommendation-head strong { white-space:nowrap; }
+.recommendation-item .recommendation-main p { font-size:13px; line-height:1.55; margin:10px 0 0; color:#1e4556; }
+.recommendation-item .recommendation-kind { display:block; margin-top:10px; color:#70838c; font-size:10px; line-height:1.45; font-weight:600; }
+.recommendation-item .recommendation-original { margin:11px 0 0; border-top:1px solid #e4edf0; padding-top:9px; color:#65838d; font-size:12px; }
+.recommendation-item .recommendation-original summary { cursor:pointer; font-weight:700; color:#22748c; line-height:1.4; }
+.recommendation-item .recommendation-original summary:hover { text-decoration:underline; }
+.recommendation-item .recommendation-original summary span { font-size:10px; font-weight:400; color:#8699a1; }
+.recommendation-item .recommendation-original p { color:#4b6975; font-size:12px; line-height:1.58; margin:9px 0 2px; overflow-wrap:anywhere; white-space:pre-line; }
+.recommendation-item .recommendation-english { font-size:11.5px; line-height:1.55; margin:9px 0 0; padding:8px 0 0; border-top:1px solid #e4edf0; color:#69818b; overflow-wrap:anywhere; }
+.recommendation-item .recommendation-source { font-size:13px; color:#234b5d; border:0; margin:10px 0 0; padding:0; }
+@media(max-width:850px) { .recommendation-item .recommendation-head > span {-webkit-line-clamp:3;} }
+
+/* Optional local language pack; does not change existing v20 panels or cards. */
+.translation-toolbar { display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; margin-bottom:10px; }
+.translation-toolbar .translation-note { flex:1 1 320px; margin:0; }
+.translation-model-button { appearance:none; background:transparent; border:0; border-bottom:1px solid #679aa5; cursor:pointer; font:inherit; font-size:11px; color:#186b83; padding:2px 0; line-height:1.5; }
+.translation-model-button:hover,.translation-model-button:focus-visible { color:#074d68; border-bottom-color:currentColor; }
+
+.recommendation-item .recommendation-source-preview { border-left:3px solid #9ab0bc; padding-left:12px; }
+.recommendation-item .recommendation-source-preview .recommendation-kind { color:#5e7480; background:#eef3f5; border-color:#dce6ea; }
+.recommendation-item .recommendation-source-preview p { color:#35515f; }
+.recommendation-item .recommendation-context { margin-top:14px; border-top:1px solid #dfe9ed; padding-top:11px; color:#294b5a; font-size:12px; }
+.recommendation-item .recommendation-context > strong { display:block; margin-bottom:8px; font-size:12px; }
+.recommendation-item .recommendation-table-wrap { overflow-x:auto; max-width:100%; }
+.recommendation-item .recommendation-context table { border-collapse:collapse; width:100%; min-width:460px; text-align:left; }
+.recommendation-item .recommendation-context th,.recommendation-item .recommendation-context td { border:1px solid #dfe9ed; padding:7px 9px; vertical-align:top; overflow-wrap:anywhere; }
+.recommendation-item .recommendation-context th { background:#f1f6f8; font-weight:650; }
+.recommendation-item .recommendation-context small { display:block; margin-top:6px; color:#617984; }
